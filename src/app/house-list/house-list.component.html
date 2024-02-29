@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<button *ngIf="buttonPressed.houseButtonToggled == false" class="start-button" (click)="buttonPressed.houseButtonToggled = true">Get started</button>
+
+<div class="house-body" *ngIf="buttonPressed.houseButtonToggled">
+    <article *ngFor="let house of houseList">
+        <div *ngIf="house.shown; else showDetails">
+            <img class="mainimg" [src]="house.photo" [alt]="house.photo">
+            <h3>{{ house.name }}</h3>
+            <p class="price-style" *ngIf="house.rent == true; else elseBlock">{{ house.price | currency:'USD':true:'1.0-0'}}<span class="rent-font">/mo</span></p>
+            <ng-template #elseBlock>
+                <p class="price-style">{{ house.price | currency:'USD':true:'1.0-0'}}</p>
+            </ng-template>
+            <p class="location-info">{{ house.street }}</p>
+            <p class="location-info">{{ house.city }},</p>
+            <p class="location-info">{{ house.state }}</p>
+            <p class="house-description">{{ house.description }}</p>
+            <button (click)="toggleDetail(house)" class="detail-button"><i class="fa-solid fa-circle-info"></i>&nbsp;&nbsp;View Details</button>
+            <button (click)="toggleTour()" class="tour-button"><i class="fa-solid fa-person"></i>&nbsp;&nbsp;Schedule Tour</button>    
+            <div class="user-info" *ngIf="buttonPressed.tourButtonToggled">
+                <p><br>Enter your contact information:</p><br>
+                <input type="text" class="rounded-input" placeholder="Full Name">
+                <br>
+                <input type="text" class="rounded-input" placeholder="Email Address">
+            </div>
+        </div>
+        <ng-template class="subimgcontainer" #showDetails>
+            <div class="row">
+                <div class="column imagecolumn">
+                    <img [src]="house.subphoto1" alt="subphoto1">
+                    <img [src]="house.subphoto1" alt="subphoto1">
+                </div>
+                <div class="column imagecolumn">
+                    <img [src]="house.subphoto1" alt="subphoto1">
+                    <img [src]="house.subphoto1" alt="subphoto1">
+                </div>
+                <div class="column textcolumn">
+                    <span>Nestled amidst the breathtaking landscapes of Boulder, Colorado, Tranquil Meadows Manor awaits its discerning new owner. This exquisite residence offers the perfect blend of luxury, comfort, and natural beauty, providing a serene retreat from the hustle and bustle of city life.</span>
+                    <span><br><br><strong>Property Features:</strong></span>
+                    <div class="featurelist">
+                        <ul>
+                            <li>Location: Situated in the picturesque countryside of Boulder, Tranquil Meadows Manor offers panoramic views of the majestic Rocky Mountains.</li>
+                            <li>Architecture: This stunning home boasts a timeless architectural design, blending seamlessly with its surroundings.</li>
+                            <li>Luxurious Amenities: From the gourmet chef's kitchen to the elegant master suite, every detail of Tranquil Meadows Manor exudes luxury and sophistication.</li>
+                            <li>Outdoor Oasis: Step outside to discover your own private oasis, complete with lush meadows, tranquil gardens, and a serene pond, perfect for unwinding amidst nature's beauty.</li>
+                            <li>Peaceful Retreat: Whether you're enjoying a morning cup of coffee on the veranda or hosting a soirée under the stars, Tranquil Meadows Manor offers the ultimate sanctuary for peaceful living.</li>
+                        </ul>
+                        <span><strong>Location Highlights:</strong></span>
+                        <ul>
+                            <li>Close proximity to hiking trails, parks, and outdoor recreational activities.</li>
+                            <li>Convenient access to downtown Boulder, renowned for its vibrant culture, dining, and shopping scene.</li>
+                            <li>Easy commuting with nearby highways and transportation options.</li>
+                        </ul>
+                    </div>
+                    <button (click)="toggleDetail(house)" class="detail-button"><i class="fa-solid fa-arrow-left"></i>&nbsp;&nbsp;Back</button>
+                </div>
+            </div>
+        </ng-template> 
+    </article>
+</div>

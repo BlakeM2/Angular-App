@@ -1,0 +1,151 @@
+.house-body {
+    margin-top: 50px;
+}
+.buttontest {
+    height: 600px;
+}
+.start-button {
+    border: none;
+    border-radius: 4px;
+    width: 50%;
+    height: 50px;
+    color: white;
+    background-color:cornflowerblue;
+    max-width: 600px;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%, -50%);
+}
+.mainimg {
+    float: left;
+    margin-left: 5%;
+    margin-right: 20px;
+    width: 700px;
+    height: 500px;
+    object-fit: fill;
+    margin-bottom: 50px;
+    transition: .1s;
+    border-radius: 5px;
+}
+.mainimg:hover {
+    transform: scale(1.03);
+    border-radius: 25px;
+}
+.subimgcontainer {
+    padding-left: 25%;
+}
+.subimg {
+    float: left;
+    margin-right: 20px;
+    width: 175px;
+    height: 150px;
+    object-fit: fill;
+    margin-bottom: 50px;
+    transition: .1s;
+    border-radius: 5px;
+}
+subimg:hover {
+    transform: scale(1.03);
+    border-radius: 25px;
+}
+p, h3 {
+    margin: 0px;
+}
+article {
+    height: 525px;
+    overflow: hidden;
+    padding-top: 25px;
+    border-bottom: solid;
+    border-bottom-color: lightgray;
+}
+.price-style {
+    margin-top: 5px;
+    font-size: 50px;
+}
+.rent-font {
+    font-size: 24px;
+}
+.location-info {
+    font-weight: 500
+}
+.house-description {
+    margin-top: 10px;
+    font-size: 16px;
+    max-height: 250px;
+    max-width: 1600px;
+    overflow: auto;
+}
+.detail-button {
+    border: none;
+    border-radius: 4px;
+    color: white;
+    background-color:cornflowerblue;
+    margin-top: 20px;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+}
+.tour-button {
+    border: none;
+    border-radius: 4px;
+    color: white;
+    background-color:#48d12a;
+    margin-left: 10px;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+}
+.row {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-left: 5%;
+    max-height: 99%;
+}
+.column {
+    padding-right: 10px;
+}
+.imagecolumn {
+    flex: 23%;
+    padding-bottom: 2%;
+}
+.textcolumn {
+    flex: 50%;
+    padding-left: 20px;
+}
+.column img {
+    margin-bottom: 5px;
+    vertical-align: middle;
+    width: 100%;
+    height: 49.9%;
+    flex: 50%;
+    border: 1px solid cornflowerblue;
+    border-radius: 5px;
+    transition: .1s;
+}
+.column img:hover {
+    transform: scale(1.3);
+    border-radius: 25px;
+}
+.column ul {
+    padding-left: 30px;
+}
+li {
+    padding-top: 5px;
+}
+.featurelist {
+    overflow: auto;
+    max-height: 65%;
+}
+.rounded-input {
+    border-radius: 3px;
+    width: 10%;
+    height: 20px;
+    margin-bottom: 8px;
+    border-width: 0.1px;
+    text-align: center;
+}
+.user-info {
+    overflow: auto;
+}
